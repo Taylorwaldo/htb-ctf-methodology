@@ -62,7 +62,7 @@ gobuster vhost -u http://<domain> -w /usr/share/wordlists/seclists/Discovery/DNS
 nikto -h http://<target_ip>
 ```
 
-### SMB Enumeration
+### SMB (Server Message Block) Enumeration
 
 What it is: SMB (Server Message Block) is a network protocol for file sharing, mainly used by Windows. Enumeration means checking what files/folders are shared on the network.
 
@@ -348,7 +348,7 @@ robots.txt, sitemap.xml, .htaccess, web.config
 wfuzz -c -w /usr/share/wordlists/seclists/Discovery/Web-Content/burp-parameter-names.txt --hh 0 http://<target_ip>/index.php?FUZZ=test
 ```
 
-### SMB (Ports 139, 445)
+### SMB (Server Message Block) (Ports 139, 445)
 ```bash
 # Null session
 smbmap -H <target_ip>
@@ -360,7 +360,7 @@ smbmap -H <target_ip> -u <username> -p <password>
 sudo mount -t cifs //<target_ip>/share /mnt/smb -o username=<username>,password=<password>
 ```
 
-### SNMP (Port 161)
+### SNMP (Simple Network Management Protocol) (Port 161)
 ```bash
 # Community string enumeration
 snmp-check <target_ip>
