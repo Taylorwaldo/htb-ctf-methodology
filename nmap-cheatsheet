@@ -1,0 +1,86 @@
+# Common Nmap Flags Cheat Sheet
+
+Here’s a quick rundown of commonly used `nmap` flags with descriptions.
+
+---
+
+### **Scan Types**
+- `-sS` → **TCP SYN scan**  
+  Sends a SYN packet to see if a port is open without completing the TCP handshake (stealthy scan).
+
+- `-sT` → **TCP connect scan**  
+  Completes the full TCP handshake to check if a port is open (less stealthy).
+
+- `-sU` → **UDP scan**  
+  Scans UDP ports to check which services are running.
+
+- `-sV` → **Service/version detection**  
+  Detects what service is running on a port and its version (e.g., Apache 2.4).
+
+- `-O` → **OS detection**  
+  Attempts to determine the target’s operating system based on TCP/IP stack fingerprinting.
+
+- `-sC` → **Default script scan**  
+  Runs Nmap’s default NSE scripts to check for common vulnerabilities and information.
+
+---
+
+### **Ports**
+- `-p <port>` → **Scan specific port(s)**  
+  Example: `-p 22,80,443` scans SSH, HTTP, and HTTPS.
+
+- `-p-` → **Scan all ports**  
+  Scans all 65535 TCP ports.
+
+---
+
+### **Host Discovery / Ping Options**
+- `-Pn` → **Treat host as online**  
+  Skip ping checks; useful if ICMP is blocked.
+
+- `-PS` → **TCP SYN ping**  
+  Checks if host is up using a SYN packet.
+
+- `-PA` → **TCP ACK ping**  
+  Checks host status with an ACK packet.
+
+- `-PE` → **ICMP echo ping**  
+  Standard ping request to check if host is alive.
+
+---
+
+### **Output / Verbosity**
+- `-v` → **Verbose**  
+  Shows more details while scanning.
+
+- `-vv` → **Extra verbose**  
+  Even more detailed output.
+
+- `-oN <file>` → **Normal output to a file**  
+  Saves scan results in normal text format.
+
+- `-oX <file>` → **XML output**  
+  Saves results in XML format for automation or parsing.
+
+- `-oG <file>` → **Grepable output**  
+  Easy to parse with scripts or `grep`.
+
+- `-oA <basename>` → **Output in all formats**  
+  Saves normal, XML, and grepable outputs with the same basename.
+
+---
+
+### **Other Useful Flags**
+- `--script <script>` → **Run specific NSE scripts**  
+  Example: `--script smb-enum-shares` to enumerate SMB shares.
+
+- `--top-ports <n>` → **Scan the top N common ports**  
+  Faster than scanning all ports.
+
+- `--reason` → **Show why a port is reported open/closed**  
+  Useful for understanding Nmap’s output.
+
+- `--open` → **Only show open ports**  
+  Filters out closed/filtered ports in the output.
+
+---
