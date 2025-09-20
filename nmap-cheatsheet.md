@@ -23,6 +23,9 @@ Here’s a quick rundown of commonly used `nmap` flags with descriptions.
 - `-sC` → **Default script scan**  
   Runs Nmap’s default NSE scripts to check for common vulnerabilities and information.
 
+- `-sP` → **Ping scan / Host discovery**  
+  Checks which hosts are online without scanning ports. (Deprecated in newer Nmap versions in favor of `-sn`.)
+
 ---
 
 ### **Ports**
