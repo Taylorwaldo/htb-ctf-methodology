@@ -39,7 +39,7 @@ Essential acronyms and terminology for HackTheBox machines and CTF competitions.
 **NetBIOS** - Network Basic Input/Output System (Port 137-139)
 - Windows networking, pairs with SMB
 
-**SMB** - Server Message Block (Ports 139/445)
+**SMB** - Server Message Block (Ports 445)
 - File sharing protocol, often misconfigured
 
 **SNMP** - Simple Network Management Protocol (Port 161)
